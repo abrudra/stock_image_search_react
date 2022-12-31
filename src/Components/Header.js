@@ -19,7 +19,8 @@ class Header extends Component {
     const { name, value } = event.target;
     this.setState({
       input: value,
-    });
+    })
+    this.searchHandle(event);
   };
 
   componentDidMount() {
