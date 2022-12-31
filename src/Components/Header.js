@@ -40,12 +40,11 @@ class Header extends Component {
       });
   }
 
-  searchHandle = ()=>{
-    console.log(54)
+  searchHandle = () => {
+    console.log(54);
     axios
       .get(
-        `https://api.unsplash.com/search/photos?client_id=${this.state.acessKey}&page=${this.state
-        .pagenr}&query=${this.state.input}&per_page=30`
+        `https://api.unsplash.com/search/photos?client_id=${this.state.acessKey}&page=${this.state.pagenr}&query=${this.state.input}&per_page=30`
       )
       .then((response) => {
         this.setState({
@@ -57,7 +56,14 @@ class Header extends Component {
           error: "Data fetching error",
         })
       );
+  };
+
+  handleKeyDown =(e)=>{
+      if (e.key === 'Enter') {
+      this.searchHandle(e)
+    }
   }
+  
 
   render() {
     return (
@@ -70,6 +76,7 @@ class Header extends Component {
             placeholder="Search"
             value={this.state.input}
             onChange={this.inpuHadler}
+            onKeyDown={this.handleKeyDown}
           />
           <img
             src={require("../data/search.png")}
