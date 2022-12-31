@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background: white;
+  margin-top: 5rem;
+  margin-left: 4rem;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+.imaginput {
+  height: 100%;
+
+  width: 8%;
+}
+.search {
+  height: 100%;
+  width: 95%;
+  font-size: 2rem;
+  border: none;
+}
+
+.div-header {
+  margin-top: 2rem;
+  margin-left: 4rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-bottom: 5px solid rgb(96, 97, 99);
+  width: 50vw;
+  height: 3rem;
+}
+.gallery {
+  width: 90%;
+  margin: 4vh;
+  /* border: 1px solid black; */
+  transform: translateX(-50);
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  row-gap: 10px;
+  column-gap: 10px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.gallery div {
+  position: relative;
+}
+
+.pic-class {
+  position: relative;
+  margin-left: 5px;
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.paradiv-class {
+  position: absolute;
+  top: -10.5vh;
+  margin-left: 1.5%;
+  padding: 2%;
   color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background: rgb(0 0 0 / 50%);
+  width: 100%;
+  display: none;
+  height: 5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.pic-class:hover:hover + .paradiv-class {
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profilediv-class {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 1vh;
+  left: 22vw;
+}
+
+.pic-class{
+    position: relative;
 }
